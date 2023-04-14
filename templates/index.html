@@ -52,7 +52,7 @@
         <div class="main">
             <div class="signal1 grid-container">
                 <h2>Signal1</h2>
-                <img src="../static/images_012.jpg" class="img-fluid " alt="...">
+                <img src="../static/3.jpg" class="img-fluid " alt="...">
                 <p>Number of Vehicles at Signal are: </p>
             </div>
             <div class="signal2 grid-container">
@@ -67,7 +67,7 @@
             </div>
             <div class="signal4 grid-container">
                 <h2>Signal4</h2>
-                <img src="../static/images_012.jpg" class="img-fluid" alt="...">
+                <img src="../static/4.jpg" class="img-fluid" alt="...">
                 <p>Number of Vehicles at Signal are: </p>
             </div>
         </div>
@@ -76,5 +76,23 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
     crossorigin="anonymous"></script>
+<script>
+    let imgIndex = 1;
+    const imgCount = 8; //total number of images
+    const imgPath = "../static/"; //path to images folder
+    window.onload = function () {
+        const signalElems = document.querySelectorAll('.grid-container');
+        function changeImages() {
+            signalElems.forEach(elem => {
+                const imgElem = elem.querySelector('img');
+                const pElem = elem.querySelector('p');
+                imgIndex = (imgIndex % imgCount) + 1; //increment index and wrap around
+                imgElem.src = imgPath + imgIndex + ".jpg";
+                pElem.textContent = "Number of Vehicles at Signal are: {Vehicle cnt} "; //reset text
+            });
+        }
+        setInterval(changeImages, 5000);
+    };
+</script>
 
 </html>

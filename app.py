@@ -4,22 +4,21 @@ import time
 
 app = Flask(__name__)
 
+isAuthenticated=False 
+
 @app.route('/')
 def login_page():
     return redirect(url_for('login'))
 
 @app.route('/login', methods=['GET','POST'])
 def login():
-    print('23412')
     if request.method == 'POST': 
-        print('here')
         username = request.form['username']
         password = request.form['password']
         print(username,password)
-        if username == 'abc' and password == '123':  
-           print('R')  
+        if username == 'abc' and password == '123':   
+           isAuthenticated=True
            return redirect(url_for('predict_page'))
-           return render_template('Predict.html')
     return render_template('login.html')
     
 # Define the function that calculates the time limits per vehicle
@@ -53,6 +52,9 @@ def predict_page():
     # Render the template with default values
     return render_template('Predict.html', time_limits_per_vehicle=[], time_limits_sum=0)
 
+@app.route('/index',methods=['GET','POST']) 
+def vehicle_cnt():
+    return render_template('index.html')
 
 if __name__ == "__main__":
     app.run(debug=True)
