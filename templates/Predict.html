@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Vehicle Count Form</title>
+  <style>
+    /* Set background gradient */
+    body {
+      background: linear-gradient(to bottom, #99ccff 0%, #6699ff 100%);
+    }
+
+    /* Style form container */
+    .container {
+      width: 80%;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Style form input fields */
+    .form-control {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+      transition: box-shadow 0.3s;
+    }
+
+    /* Add hover effect to input fields */
+    .form-control:hover {
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Style predict button */
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    /* Add hover effect to predict button */
+    .btn:hover {
+      background-color: #3e8e41;
+    }
+
+    /* Style form header */
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+      text-shadow: 1px 1px #fff;
+      font-size: 40px;
+    }
+
+    /* Add animation to form header */
+    h1 {
+      animation-name: heading;
+      animation-duration: 1s;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+    }
+
+
+    /* Style the option elements */
+    option {
+      background-color: #fff;
+      color: #333;
+      font-size: 18px;
+    }
+
+    /* Define animation keyframes */
+    @keyframes heading {
+      0% {
+        text-shadow: 1px 1px #fff;
+      }
+
+      50% {
+        text-shadow: -1px -1px #fff;
+      }
+
+      100% {
+        text-shadow: 1px 1px #fff;
+      }
+    }
+
+    /* Style form sections */
+    .form-section {
+      margin-bottom: 20px;
+      padding: 10px;
+      background-color: #f2f2f2;
+      border-radius: 5px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Style form labels */
+    label {
+      font-size: 16px;
+      font-weight: bold;
+      color: #333;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    /* Style form sub-labels */
+    .sub-label {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Vehicle Count Form</h1>
+    <form method="post">
+      <div class="form-section">
+        <label for="signal1">Signal 1</label>
+        <input type="number" id="signal1" name="signal1" class="form-control" placeholder="Enter vehicle count">
+        <span class="sub-label">Number of vehicles at signal 1</span>
+      </div>
+      <div class="form-section">
+        <label for="signal2">Signal 2</label>
+        <input type="number" id="signal2" name="signal2" class="form-control" placeholder="Enter vehicle count">
+        <span class="sub-label">Number of vehicles at signal 2</span>
+      </div>
+      <div class="form-section">
+        <label for="signal3">Signal 3</label>
+        <input type="number" id="signal3" name="signal3" class="form-control" placeholder="Enter vehicle count">
+        <span class="sub-label">Number of vehicles at signal 3</span>
+      </div>
+      <div class="form-section">
+        <label for="signal4">Signal 4</label>
+        <input type="number" id="signal4" name="signal4" class="form-control" placeholder="Enter vehicle count">
+        <span class="sub-label">Number of vehicles at signal 4</span>
+      </div>
+      <div class="form-section">
+        <button type="submit" class="btn">Predict</button>
+      </div>
+      <h1>The result is {{time_limits_sum}}</h1>
+      <div>
+        {% for time in time_limits_per_vehicle %}
+        {{time}}
+        {% endfor %}
+      </div>
+    </form>
+  </div>
+</body>
+
+</html>

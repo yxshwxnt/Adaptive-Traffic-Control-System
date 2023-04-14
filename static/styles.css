@@ -1,0 +1,11 @@
+.main{
+    display: grid; 
+    grid-template-columns: auto auto;
+    justify-content: center;
+    column-gap: 3rem;
+    row-gap: 2rem;
+} 
+.grid-container{
+    display: inline-grid; 
+    text-align: center;
+}
