@@ -40,7 +40,7 @@
             <div class="signal1 grid-container">
                 <h2>Signal1</h2>
                 <img src="../static/3.jpg" class="img-fluid " alt="...">
-                <p>Number of Vehicles at Signal are: </p>
+                <p>Number of Vehicles at Signal are: {{result}}</p>
             </div>
             <div class="signal2 grid-container">
                 <h2>Signal2</h2>
@@ -72,14 +72,21 @@
         function changeImages() {
             signalElems.forEach(elem => {
                 const imgElem = elem.querySelector('img');
-                const pElem = elem.querySelector('p');
+                // const pElem = elem.querySelector('p');
                 imgIndex = (imgIndex % imgCount) + 1; //increment index and wrap around
                 imgElem.src = imgPath + imgIndex + ".jpg";
-                pElem.textContent = "Number of Vehicles at Signal are: {Vehicle cnt} "; //reset text
+                // pElem.textContent = Number of Vehicles at Signal are: {{result}} "; //reset text
             });
         }
         setInterval(changeImages, 5000);
+        alert("ffdfwas")
+        // <alert>Form submitalert>
+        window.setTimeout(function () { redirect(); }, 5000);
     };
+    function redirect() {
+        document.cartCheckout.submit();
+    }
 </script>
+
 
 </html>
