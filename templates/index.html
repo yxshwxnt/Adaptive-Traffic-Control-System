@@ -36,29 +36,33 @@
         </nav>
         <!-- Main div   -->
         <h1 class="text-center mb-3">Real Time Traffic Monitoring</h1>
-        <div class="main">
-            <div class="signal1 grid-container">
-                <h2>Signal1</h2>
-                <img src="../static/3.jpg" class="img-fluid " alt="...">
-                <p>Number of Vehicles at Signal are: {{result}}</p>
+        <form action="/upload" name="cartCheckout" id="cartCheckout" method="post">
+            <div class="main">
+                <div class="signal1 grid-container">
+                    <h2>Signal1</h2>
+                    <img src="../static/3.jpg" class="img-fluid " alt="..." value="signal1" id="signal1">
+                    <p>Number of Vehicles at Signal are: {{cnt}}</p>
+                </div>
+                <div class="signal2 grid-container">
+                    <h2>Signal2</h2>
+                    <img src="../static/2.jpg" class="img-fluid" alt="..." value="signal2" id="signal2">
+                    <p>Number of Vehicles at Signal are: {{result}}</p>
+                </div>
+                <div class="signal3 grid-container">
+                    <h2>Signal3</h2>
+                    <img src="../static/2.jpg" class="img-fluid" alt="..." value="signal3" id="Signal3">
+                    <p>Number of Vehicles at Signal are: </p>
+                </div>
+                <div class="signal4 grid-container">
+                    <h2>Signal4</h2>
+                    <img src="../static/4.jpg" class="img-fluid" alt="..." value="signal4" id="signal4">
+                    <p>Number of Vehicles at Signal are: </p>
+                </div>
             </div>
-            <div class="signal2 grid-container">
-                <h2>Signal2</h2>
-                <img src="../static/2.jpg" class="img-fluid" alt="...">
-                <p>Number of Vehicles at Signal are: </p>
-            </div>
-            <div class="signal3 grid-container">
-                <h2>Signal3</h2>
-                <img src="../static/2.jpg" class="img-fluid" alt="...">
-                <p>Number of Vehicles at Signal are: </p>
-            </div>
-            <div class="signal4 grid-container">
-                <h2>Signal4</h2>
-                <img src="../static/4.jpg" class="img-fluid" alt="...">
-                <p>Number of Vehicles at Signal are: </p>
-            </div>
-        </div>
+        </form>
+        <h1>{{result}} heh</h1>
     </div>
+
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
