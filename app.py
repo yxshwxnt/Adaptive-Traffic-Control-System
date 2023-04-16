@@ -9,7 +9,6 @@ from PIL import Image
 app = Flask(__name__)
 
 isAuthenticated=False 
-cnt=0 
 
 @app.route('/')
 def login_page():
@@ -221,9 +220,12 @@ def process_images(img1, img2, img3, img4):
     print(cars3)
     print(cars4) 
     return 0
-    
+
+cnt=0
+
 @app.route('/upload', methods=['POST','GET'])
 def upload_images(): 
+    global cnt 
     cnt+=1
     # imgIndex = 1
     # imgCount = 8
@@ -231,8 +233,9 @@ def upload_images():
     signal2 = cv.imread(f'./static/{cnt+1}.jpg')
     signal3 = cv.imread(f'./static/{cnt+2}.jpg')
     signal4 = cv.imread(f'./static/{cnt+3}.jpg')
-    result = process_images(signal1,signal2,signal3,signal4)
-    return render_template('index.html',result=2)
+    # result = process_images(signal1,signal2,signal3,signal4)
+    # print(result)
+    return render_template('index.html',result=1,cnt=cnt)
 
 
 
